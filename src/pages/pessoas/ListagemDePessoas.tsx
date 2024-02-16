@@ -1,11 +1,12 @@
 import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
+import { LinearProgress, Paper, Table, TableBody, TableCell, TableContainer, TableFooter, TableHead, TableRow } from "@mui/material";
 
 import { IListagemPessoa, PessoasService } from "../../shared/services/api/pessoas/PessoasService";
 import { FerramentasDaListagem } from "../../shared/components";
 import { LayoutBaseDePagina } from "../../shared/layouts";
 import { useDebounce } from "../../shared/hooks";
+import { Environment } from "../../shared/environment";
 
 
 export const ListagemDePessoas: React.FC = () => {
@@ -54,6 +55,7 @@ export const ListagemDePessoas: React.FC = () => {
     >
       <TableContainer component={Paper} variant="outlined" sx={{ m: 1, width: 'auto' }}>
         <Table>
+
           <TableHead>
             <TableRow>
               <TableCell>Ações</TableCell>
@@ -61,8 +63,8 @@ export const ListagemDePessoas: React.FC = () => {
               <TableCell>Email</TableCell>
             </TableRow>
           </TableHead>
-          <TableBody>
 
+          <TableBody>
             {rows.map(row => (
               <TableRow key={row.id}>
                 <TableCell>Ações</TableCell>
@@ -70,8 +72,22 @@ export const ListagemDePessoas: React.FC = () => {
                 <TableCell>{row.email}</TableCell>
               </TableRow>
             ))}
-            
           </TableBody>
+
+          {totalCount === 0 && !isLoading && (
+            <caption>{Environment.LISTAGEM_VAZIA}</caption>
+          )}
+
+          <TableFooter>
+            {isLoading && (
+              <TableRow>
+                <TableCell colSpan={3}>
+                    <LinearProgress variant="indeterminate" />
+                </TableCell>
+              </TableRow>
+            )}
+          </TableFooter>
+
         </Table>
       </TableContainer>
     </LayoutBaseDePagina>

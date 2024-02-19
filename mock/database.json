@@ -13,12 +13,6 @@
       "nomeCompleto": "João Silva"
     },
     {
-      "id": 3,
-      "email": "pedro@email.com",
-      "cidadeId": 1,
-      "nomeCompleto": "Pedro Matos"
-    },
-    {
       "id": 4,
       "email": "ana@email.com",
       "cidadeId": 1,

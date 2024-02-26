@@ -13,18 +13,6 @@
       "nomeCompleto": "João Silva"
     },
     {
-      "id": 4,
-      "email": "ana@email.com",
-      "cidadeId": 1,
-      "nomeCompleto": "Ana Regina"
-    },
-    {
-      "id": 5,
-      "email": "silvia@email.com",
-      "cidadeId": 1,
-      "nomeCompleto": "Silvia Nogueira"
-    },
-    {
       "id": 6,
       "email": "jorge@email.com",
       "cidadeId": 1,

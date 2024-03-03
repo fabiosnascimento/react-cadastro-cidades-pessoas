@@ -8,9 +8,9 @@
     },
     {
       "id": 2,
+      "nomeCompleto": "João Silva Chaves",
       "email": "joao@email.com",
-      "cidadeId": 1,
-      "nomeCompleto": "João Silva"
+      "cidadeId": 1
     },
     {
       "id": 6,
@@ -71,6 +71,12 @@
       "email": "renata@email.com",
       "cidadeId": 1,
       "nomeCompleto": "Renata Chavez"
+    },
+    {
+      "nomeCompleto": "Chico",
+      "email": "chico@email.com",
+      "cidadeId": "1",
+      "id": 16
     }
   ]
 }
